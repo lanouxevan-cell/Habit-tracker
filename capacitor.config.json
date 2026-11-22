@@ -1,0 +1,7 @@
+{
+  "appId": "com.discipline.tracker",
+  "appName": "Discipline",
+  "webDir": "www",
+  "backgroundColor": "#0b0b0c",
+  "android": { "adjustMarginsForEdgeToEdge": "auto" }
+}
