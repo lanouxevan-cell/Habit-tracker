@@ -1,0 +1,13 @@
+CRÉER L'APK DISCIPLINE (sans Android Studio)
+
+1. Crée un compte gratuit sur github.com et un nouveau dépôt (New repository), nom : discipline.
+2. Envoie tous les fichiers de ce dossier dans le dépôt, y compris le dossier ".github".
+   - Sur ordinateur : "Add file" > "Upload files", glisse tout le contenu du dossier.
+   - Sur téléphone : crée chaque fichier avec "Add file" > "Create new file".
+     Pour le workflow, tape le nom ".github/workflows/build-apk.yml" (les / créent les dossiers).
+3. Onglet "Actions" > "Build APK" : le build démarre tout seul à chaque envoi (ou "Run workflow").
+4. Après ~5 minutes, ouvre l'exécution terminée, section "Artifacts" : télécharge "discipline-apk" (un zip contenant app-debug.apk).
+5. Décompresse, ouvre app-debug.apk sur ton téléphone et autorise l'installation depuis cette source.
+
+Pour modifier l'appli plus tard : remplace le fichier www/index.html dans le dépôt, un nouvel APK est construit.
+Tes données sont stockées sur le téléphone ; réinstaller par-dessus une ancienne version les conserve.

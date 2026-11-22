@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Discipline</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0b0c;--card:#141415;--bd:#262629;--tx:#fff;--mu:#8a8a90;--ac:#7c6cf5;--gr:#22c55e;--rd:#ef4444;--am:#f59e0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+main{max-width:560px;margin:0 auto;padding:20px 16px}
+h1{font-size:30px;margin:4px 0 2px}
+.sub{color:var(--mu);font-size:15px;margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:16px;margin-bottom:14px}
+.lbl{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin:20px 4px 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar{height:6px;background:#26262a;border-radius:9px;overflow:hidden;margin-top:10px}
+.bar i{display:block;height:100%;background:var(--ac);border-radius:9px;transition:width .3s}
+.big{font-size:28px;font-weight:700}
+.mu{color:var(--mu);font-size:13px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center}
+.item{display:flex;align-items:center;gap:12px;padding:13px 4px;border-bottom:1px solid var(--bd);cursor:pointer;user-select:none}
+.item:last-child{border:0}
+.cb{width:24px;height:24px;border-radius:8px;border:2px solid #3a3a40;flex:none;display:grid;place-items:center;font-size:14px;color:#fff}
+.on .cb{background:var(--ac);border-color:var(--ac)}
+.on .nm{color:var(--mu);text-decoration:line-through}
+.quote{border-left:3px solid var(--ac);padding-left:12px;font-style:italic;color:#cfcfd6}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:16px;padding:14px;font-size:16px;font-weight:600;width:100%}
+input,textarea,select{background:#0e0e10;border:1px solid var(--bd);color:#fff;border-radius:12px;padding:12px;font-size:15px;width:100%;font-family:inherit}
+textarea{min-height:110px;resize:vertical}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:#101012;border-top:1px solid var(--bd);padding:8px 4px calc(8px + env(safe-area-inset-bottom,0px));z-index:5}
+.nav button{flex:1;background:none;border:0;color:var(--mu);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.nav button span{font-size:24px}
+.nav .a{color:var(--ac)}
+.tw{overflow-x:auto;border-radius:12px}
+table{border-collapse:collapse;font-size:12px;min-width:100%}
+td,th{border:1px solid var(--bd);text-align:center;min-width:26px;height:30px;padding:0}
+th{color:var(--mu);font-weight:500}
+td.h,th.h{position:sticky;left:0;background:var(--card);text-align:left;padding:0 8px;min-width:118px;white-space:nowrap;z-index:1}
+td.y{color:var(--ac);font-weight:700}td.n{color:#5a3036}td.t{background:#1b1a2c}
+.x{background:none;border:0;color:var(--rd);font-size:20px;padding:4px 8px}
+.chip{border:1px solid var(--ac);color:var(--ac);border-radius:99px;padding:3px 10px;font-size:12px}
+.mn{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.mn button{background:var(--card);border:1px solid var(--bd);color:#fff;border-radius:12px;width:42px;height:42px;font-size:18px}
+main{padding:14px}
+h1{font-size:20px;margin:2px 0 0}
+.sub{font-size:12px;margin-bottom:12px}
+.card{border-radius:12px;padding:11px;margin-bottom:9px}
+.lbl{font-size:10px;margin:14px 2px 6px}
+.big{font-size:18px}
+.mu{font-size:11px}
+.item{padding:8px 2px;gap:10px;font-size:14px}
+.cb{width:18px;height:18px;border-radius:5px;font-size:11px;border-color:var(--mu)}
+.on .cb{border-color:var(--ac);background:var(--ac);color:var(--ak,#fff)}
+.bar{height:4px;margin-top:7px;background:var(--bd)}
+.btn{padding:10px;font-size:14px;border-radius:10px;color:var(--ak,#fff);background:var(--ac)}
+.nav{background:var(--card)}
+.nav button{font-size:10px}.nav button span{font-size:18px}
+input,textarea,select{padding:9px;font-size:14px;border-radius:9px;background:var(--bg);color:var(--tx)}
+textarea{min-height:80px}
+td,th{height:24px;min-width:22px;font-size:11px}
+td.h,th.h{min-width:104px}
+td.t{background:color-mix(in srgb,var(--ac) 16%,transparent)}
+td.n{color:color-mix(in srgb,var(--rd) 45%,transparent)}
+.quote{color:var(--mu);font-size:13px}
+.mn button{width:34px;height:34px;color:var(--tx)}
+html[data-t=minimal]{--bg:#0a0a0a;--card:#121212;--bd:#1e1e1e;--mu:#7a7a7a;--ac:#4ade80;--ak:#04130a}
+html[data-t=minimal] .card{border-color:transparent;border-radius:8px}
+html[data-t=papier]{color-scheme:light;--bg:#f3eee2;--card:#faf6ec;--bd:#d8d0bb;--tx:#2b2a27;--mu:#7d776a;--ac:#2b2a27;--ak:#faf6ec;--rd:#b4443a}
+html[data-t=papier] body{font-family:"Patrick Hand","Segoe Print",cursive,sans-serif}
+html[data-t=papier] .item{font-size:16px}
+html[data-t=papier] .card{border-radius:4px}
+html[data-t=ocean]{--bg:#060d1a;--card:#0c1729;--bd:#172640;--mu:#6f86a8;--ac:#38bdf8;--ak:#04121f}
+input,textarea,select{font-size:16px;-webkit-user-select:text;user-select:text;touch-action:manipulation;-webkit-appearance:none;appearance:none;position:relative;z-index:1}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav class="nav" id="nav"></nav>
+<script>
+const DEF=[["Se lever avant 6h","c"],["Douche froide","c"],["Pas de téléphone avant 11h","c"],["Sport","c"],["Lire 20 pages","c"],["Méditer 10 min","c"],["Manger sain","c"],["3 L d’eau","c"],["Pas d’alcool","c"],["Dormir avant 22h30","c"],["Journaling","o"],["Deep work","o"],["Apprendre quelque chose","o"],["10k pas","o"],["Étirements","o"]];
+const QUOTES=["La discipline aujourd’hui, la liberté demain.","Continue de te montrer. Ton futur toi compte sur toi.","Sois la personne que tu veux devenir.","Pas de motivation ? Fais-le quand même."];
+const MOIS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+const JOURS=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
+let S;try{S=JSON.parse(localStorage.getItem("disc")||"null")}catch(e){S=null}
+if(!S)S={habits:DEF.map((h,i)=>({id:"h"+i,name:h[0],type:h[1]})),log:{},j:{}};
+const save=()=>{try{localStorage.setItem("disc",JSON.stringify(S))}catch(e){}};
+const pad=n=>String(n).padStart(2,"0");
+const key=(y,m,d)=>y+"-"+pad(m+1)+"-"+pad(d);
+const now=new Date(),TK=key(now.getFullYear(),now.getMonth(),now.getDate());
+let pend=null,tab="home",vy=now.getFullYear(),vm=now.getMonth();
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L=k=>S.log[k]||[];
+function tog(k,id){const a=L(k);S.log[k]=a.includes(id)?a.filter(x=>x!==id):[...a,id];save();render()}
+const total=()=>Object.values(S.log).reduce((a,b)=>a+b.length,0);
+function monthStats(y,m){const dim=new Date(y,m+1,0).getDate();const last=(y===now.getFullYear()&&m===now.getMonth())?now.getDate():(new Date(y,m,1)>now?0:dim);let c=0;const ids=S.habits.map(h=>h.id);for(let d=1;d<=last;d++)c+=L(key(y,m,d)).filter(i=>ids.includes(i)).length;const poss=last*S.habits.length;return{c,poss,pct:poss?Math.round(c/poss*100):0,dim,last}}
+function streak(){let s=0,d=new Date(now);const core=S.habits.filter(h=>h.type==="c");if(!core.length)return 0;for(let i=0;i<400;i++){const k=key(d.getFullYear(),d.getMonth(),d.getDate());const done=core.every(h=>L(k).includes(h.id));if(done)s++;else if(i>0)break;d.setDate(d.getDate()-1)}return s}
+function list(type,title){const hs=S.habits.filter(h=>h.type===type);if(!hs.length)return"";return`<div class="lbl">${title}</div><div class="card" style="padding:4px 14px">${hs.map(h=>`<div class="item ${L(TK).includes(h.id)?"on":""}" data-t="${h.id}"><div class="cb">${L(TK).includes(h.id)?"✓":""}</div><div class="nm">${esc(h.name)}</div></div>`).join("")}</div>`}
+function home(){const h=now.getHours(),g=h<6?"Bonne nuit 🌙":h<12?"Bonjour ☀️":h<18?"Bonjour 👋":"Bonsoir 🌙";const n=S.habits.filter(x=>L(TK).includes(x.id)).length,N=S.habits.length,p=N?Math.round(n/N*100):0;const xp=total()*10,lv=Math.floor(xp/150)+1,ms=monthStats(now.getFullYear(),now.getMonth());const q=QUOTES[now.getDate()%QUOTES.length];
+return`<h1>${g}</h1><div class="sub">${JOURS[now.getDay()]} ${now.getDate()} ${MOIS[now.getMonth()].toLowerCase()} ${now.getFullYear()}</div>
+<div class="card"><div class="row"><b>⭐ Niveau ${lv}</b><span class="mu">${xp%150} / 150 XP</span></div><div class="bar"><i style="width:${(xp%150)/150*100}%"></i></div></div>
+<div class="card"><div class="row"><div><div class="mu">AUJOURD’HUI</div><div class="big">${n}/${N}</div></div><div class="big" style="color:var(--ac)">${p}%</div></div><div class="bar"><i style="width:${p}%"></i></div></div>
+<div class="grid3"><div class="card"><div class="big">🔥 ${streak()}</div><div class="mu">série (jours)</div></div><div class="card"><div class="big">${ms.pct}%</div><div class="mu">ce mois</div></div><div class="card"><div class="big">${ms.c}</div><div class="mu">validées</div></div></div>
+${list("c","Non-négociables")}${list("o","Autres habitudes")}
+<div class="card quote">${q}</div>`}
+function line(v,W,H,area,grid){const n=v.length,p=4,P=v.map((y,i)=>[p+(n>1?i*(W-2*p)/(n-1):0),H-p-y*(H-2*p)/100]);const d=P.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join("");const a=area&&n>1?`<path d="${d}L${P[n-1][0].toFixed(1)} ${H-p}L${P[0][0]} ${H-p}Z" fill="var(--ac)" opacity=".14"/>`:"";const g=grid?[0,50,100].map(y=>{const yy=H-p-y*(H-2*p)/100;return`<line x1="0" x2="${W}" y1="${yy}" y2="${yy}" stroke="var(--bd)" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>`}).join(""):"";return`<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none" style="display:block">${g}${a}<path d="${d}" fill="none" stroke="var(--ac)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`}
+function charts(y,m){const ms=monthStats(y,m),N=S.habits.length;if(!ms.last||!N)return"";const ids=S.habits.map(h=>h.id),dv=[];for(let d=1;d<=ms.last;d++)dv.push(L(key(y,m,d)).filter(i=>ids.includes(i)).length/N*100);const rows=S.habits.map(h=>{let c=0;const v=[];for(let d=1;d<=ms.last;d++){if(L(key(y,m,d)).includes(h.id))c++;v.push(c/d*100)}return`<div class="item" style="cursor:default;display:grid;grid-template-columns:1fr 90px 38px;gap:10px;padding:7px 2px"><div class="nm" style="font-size:13px">${esc(h.name)}</div><div>${line(v,90,26,0,0)}</div><div style="text-align:right;font-size:13px">${Math.round(c/ms.last*100)}%</div></div>`}).join("");return`<div class="lbl">Progression quotidienne</div><div class="card">${line(dv,300,90,1,1)}<div class="row mu" style="margin-top:4px"><span>Jour 1</span><span>% d’habitudes validées · lignes 0 / 50 / 100 %</span><span>Jour ${ms.last}</span></div></div><div class="lbl">Courbe par habitude (taux cumulé)</div><div class="card" style="padding:4px 12px">${rows}</div>`}
+function suivi(){const ms=monthStats(vy,vm);const hs=S.habits;let t=`<table><tr><th class="h">Habitudes</th>`;for(let d=1;d<=ms.dim;d++)t+=`<th>${d}</th>`;t+="</tr>";hs.forEach(h=>{t+=`<tr><td class="h">${esc(h.name)}</td>`;for(let d=1;d<=ms.dim;d++){const k=key(vy,vm,d),on=L(k).includes(h.id),fut=new Date(vy,vm,d)>now,td=k===TK;t+=`<td data-c="${k}|${h.id}" class="${on?"y":fut?"":"n"} ${td?"t":""}">${on?"✓":fut?"":"✗"}</td>`}t+="</tr>"});t+="</table>";
+return`<h1>Suivi</h1><div class="sub">Tableau d’habitudes</div><div class="mn"><button data-m="-1">‹</button><b>${MOIS[vm]} ${vy}</b><button data-m="1">›</button></div>
+<div class="card"><div class="row"><div class="mu">PROGRÈS GLOBAL</div><div class="big" style="color:var(--ac)">${ms.pct}%</div></div><div class="bar"><i style="width:${ms.pct}%"></i></div></div>
+<div class="card" style="padding:8px"><div class="tw">${t}</div></div><div class="mu" style="text-align:center">Touche une case pour la modifier</div>${charts(vy,vm)}`}
+function journal(){const j=S.j[TK]||{w:["","",""],n:""};return`<h1>Journal</h1><div class="sub">Aujourd’hui</div>
+<div class="lbl">Aujourd’hui je vais :</div><div class="card" style="display:grid;gap:10px">${[0,1,2].map(i=>`<input data-w="${i}" value="${esc(j.w[i]||"")}" placeholder="Objectif ${i+1}">`).join("")}</div>
+<div class="lbl">Notes / réflexions</div><div class="card"><textarea id="notes" placeholder="Comment s’est passée ta journée ?">${esc(j.n||"")}</textarea></div>
+<div class="card quote">Discipline today, freedom tomorrow.</div>`}
+function habs(){return`<h1>Habitudes</h1><div class="sub">Ajoute, supprime, organise</div><div class="lbl">Style</div><div class="card" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${[["minimal","Minimal"],["papier","Papier"],["ocean","Océan"],["violet","Violet"]].map(a=>`<button class="btn" data-th="${a[0]}" style="${(S.th||"minimal")===a[0]?"":"background:transparent;color:var(--tx);border:1px solid var(--bd)"}">${a[1]}</button>`).join("")}</div>
+<div class="card" style="display:grid;gap:10px"><input id="nn" placeholder="Nouvelle habitude"><select id="nt"><option value="c">Non-négociable</option><option value="o">Autre habitude</option></select><button class="btn" id="add">Ajouter</button></div>
+<div class="card" style="padding:4px 14px">${S.habits.map(h=>`<div class="item" style="cursor:default"><div class="nm" style="flex:1">${esc(h.name)}</div><span class="chip">${h.type==="c"?"Essentiel":"Autre"}</span><button class="x" data-d="${h.id}">${pend===h.id?"Sûr ?":"✕"}</button></div>`).join("")}</div>`}
+function render(){document.documentElement.dataset.t=S.th||"minimal";const v={home,suivi,journal,habs}[tab]();document.getElementById("app").innerHTML=v;
+document.getElementById("nav").innerHTML=[["home","🏠","Accueil"],["suivi","📊","Suivi"],["journal","📝","Journal"],["habs","⚙️","Habitudes"]].map(a=>`<button data-n="${a[0]}" class="${tab===a[0]?"a":""}"><span>${a[1]}</span>${a[2]}</button>`).join("")}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-n],[data-th],[data-t],[data-c],[data-m],[data-d],#add");if(!t)return;
+if(t.dataset.n){tab=t.dataset.n;render();scrollTo(0,0)}
+else if(t.dataset.th){S.th=t.dataset.th;save();render()}
+else if(t.dataset.t)tog(TK,t.dataset.t);
+else if(t.dataset.c){const[k,i]=t.dataset.c.split("|");if(new Date(k+"T00:00:00")<=now)tog(k,i)}
+else if(t.dataset.m){vm+=+t.dataset.m;if(vm<0){vm=11;vy--}if(vm>11){vm=0;vy++}render()}
+else if(t.dataset.d){if(pend===t.dataset.d){S.habits=S.habits.filter(h=>h.id!==t.dataset.d);pend=null;save();render()}else{pend=t.dataset.d;render()}}
+else if(t.id==="add"){const v=document.getElementById("nn").value.trim();if(v){S.habits.push({id:"h"+Date.now(),name:v,type:document.getElementById("nt").value});save();render()}}});
+document.addEventListener("input",e=>{const j=S.j[TK]||(S.j[TK]={w:["","",""],n:""});if(e.target.dataset.w!==undefined)j.w[+e.target.dataset.w]=e.target.value;else if(e.target.id==="notes")j.n=e.target.value;else return;save()});
+try{const ic="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#7c6cf5"/><text x="256" y="350" font-size="300" text-anchor="middle">🔥</text></svg>');const m={name:"Discipline",short_name:"Discipline",display:"standalone",background_color:"#0b0b0c",theme_color:"#0b0b0c",start_url:location.href,icons:[{src:ic,sizes:"512x512",type:"image/svg+xml"}]};const l=document.createElement("link");l.rel="manifest";l.href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:"application/manifest+json"}));document.head.appendChild(l)}catch(e){}
+render();
+</script>
+</body>
+</html>
