@@ -89,6 +89,7 @@ const MOIS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","
 const JOURS=["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"];
 let S;try{S=JSON.parse(localStorage.getItem("disc")||"null")}catch(e){S=null}
 if(!S)S={habits:DEF.map((h,i)=>({id:"h"+i,name:h[0],type:h[1]})),log:{},j:{}};
+Object.keys(S.log).forEach(k=>S.log[k]=S.log[k].filter(i=>/^h\d+$/.test(i)));
 const save=()=>{try{localStorage.setItem("disc",JSON.stringify(S))}catch(e){}};
 const pad=n=>String(n).padStart(2,"0");
 const key=(y,m,d)=>y+"-"+pad(m+1)+"-"+pad(d);
@@ -123,7 +124,7 @@ function habs(){return`<h1>Habitudes</h1><div class="sub">Ajoute, supprime, orga
 <div class="card" style="padding:4px 14px">${S.habits.map(h=>`<div class="item" style="cursor:default"><div class="nm" style="flex:1">${esc(h.name)}</div><span class="chip">${h.type==="c"?"Essentiel":"Autre"}</span><button class="x" data-d="${h.id}">${pend===h.id?"Sûr ?":"✕"}</button></div>`).join("")}</div>`}
 function render(){document.documentElement.dataset.t=S.th||"minimal";const v={home,suivi,journal,habs}[tab]();document.getElementById("app").innerHTML=v;
 document.getElementById("nav").innerHTML=[["home","🏠","Accueil"],["suivi","📊","Suivi"],["journal","📝","Journal"],["habs","⚙️","Habitudes"]].map(a=>`<button data-n="${a[0]}" class="${tab===a[0]?"a":""}"><span>${a[1]}</span>${a[2]}</button>`).join("")}
-document.addEventListener("click",e=>{const t=e.target.closest("[data-n],[data-th],[data-t],[data-c],[data-m],[data-d],#add");if(!t)return;
+document.addEventListener("click",e=>{const t=e.target.closest("[data-n],[data-th],[data-t]:not(html),[data-c],[data-m],[data-d],#add");if(!t)return;
 if(t.dataset.n){tab=t.dataset.n;render();scrollTo(0,0)}
 else if(t.dataset.th){S.th=t.dataset.th;save();render()}
 else if(t.dataset.t)tog(TK,t.dataset.t);
