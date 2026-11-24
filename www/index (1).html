@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f1ece0">
+<title>Mon système de discipline</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap">
+<style>
+:root{--bg:#f1ece0;--ink:#2a2926;--mu:#8a8476;--ln:#cfc7b3;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e0f;--ink:#ecebe6;--mu:#8d8a82;--ln:#2e2e30;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e0f;--ink:#ecebe6;--mu:#8d8a82;--ln:#2e2e30;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Patrick Hand","Segoe Print","Bradley Hand",cursive,sans-serif;font-size:15px;line-height:1.25}
+main{max-width:520px;margin:0 auto;padding:16px 14px 40px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid var(--ink);padding-bottom:4px;margin-bottom:14px}
+.top h1{font-size:15px;letter-spacing:.1em;margin:0;font-weight:400}
+.top span{font-size:14px;border-bottom:1.5px solid var(--ink)}
+h2{font-size:12px;letter-spacing:.14em;font-weight:400;margin:0 0 6px;text-transform:uppercase}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-bottom:18px}
+.it{display:flex;align-items:flex-start;gap:7px;padding:3px 0;cursor:pointer;user-select:none}
+.bx{flex:none;width:14px;height:14px;margin-top:2px;border:1.5px solid var(--ink);border-radius:2px;font-style:normal;font-size:12px;line-height:11px;text-align:center}
+.on span{color:var(--mu);text-decoration:line-through;text-decoration-thickness:1px}
+.box{border:1.5px solid var(--ink);padding:6px 8px;margin-bottom:12px}
+.rm{margin-left:auto;color:var(--mu);font-weight:400;font-size:13px;padding:2px 6px;margin-top:-2px;opacity:.75;cursor:pointer}
+.add{display:inline-block;margin-top:6px;font-size:14px;color:var(--mu);cursor:pointer;border-bottom:1px dashed var(--mu);padding:2px 0}
+.ar{display:flex;gap:6px;align-items:flex-end;margin-top:6px}.ar button{background:var(--ink);color:var(--bg);border:0;font:inherit;font-size:14px;padding:5px 10px}
+.rem{font-size:13px;letter-spacing:.1em;margin-bottom:2px}
+.q{border-bottom:1.5px solid var(--ink);display:inline;font-size:15px}
+.mn{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.mn b{font-weight:400;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.mn button{background:none;border:0;color:var(--ink);font-size:20px;padding:0 10px;font-family:inherit}
+.tw{overflow-x:auto;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);margin-bottom:18px}
+table{border-collapse:collapse;font-size:12px}
+td,th{border:1px solid var(--ln);width:17px;min-width:17px;height:22px;text-align:center;padding:0;font-weight:400}
+th{font-size:10px;color:var(--mu);height:20px}
+td.h,th.h{position:sticky;left:0;background:var(--bg);width:104px;min-width:104px;max-width:104px;text-align:left;padding:0 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-right:1.5px solid var(--ink);z-index:1}
+td.y{font-size:14px}td.n{color:var(--ln)}td.t,th.t{background:color-mix(in srgb,var(--ink) 9%,transparent)}
+.ln{display:block;width:100%;background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);font:inherit;font-size:16px;padding:4px 0;border-radius:0;outline:0;-webkit-user-select:text;user-select:text}
+.ln::placeholder{color:var(--mu);opacity:.6}
+textarea.ln{resize:none;height:96px;line-height:24px;background:repeating-linear-gradient(transparent 0 23px,var(--ink) 23px 24px);border:0}
+.pg{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.pg b{border:1.5px solid var(--ink);padding:3px 12px;font-size:22px;font-weight:400;letter-spacing:.04em}
+.ft{text-align:center;margin-top:26px;font-size:13px;color:var(--mu)}
+.ft a{border-bottom:1px solid var(--mu);cursor:pointer}
+.ad{display:grid;gap:8px;margin-top:10px}
+.ad button{background:var(--ink);color:var(--bg);border:0;padding:9px;font:inherit;font-size:15px}
+.ad select{background:var(--bg);color:var(--ink);border:0;border-bottom:1px solid var(--ink);font:inherit;font-size:16px;padding:4px 0;border-radius:0}
+.rt{display:flex;align-items:flex-end;gap:8px}
+.th{background:none;border:1.5px solid var(--ink);color:var(--ink);font:inherit;font-size:15px;line-height:1;width:24px;height:24px;padding:0;border-radius:50%}
+.row2{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.vt{background:none;border:1.5px solid var(--ink);color:var(--ink);font:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px}
+.ch{border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:10px 4px;margin-bottom:18px}
+.cl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:4px}
+.ax{display:flex;justify-content:space-between;font-size:11px;color:var(--mu)}
+.cr{display:grid;grid-template-columns:1fr 88px 34px;gap:8px;align-items:center;padding:3px 0;font-size:14px}
+.cr em{font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cr span{text-align:right;font-size:13px}
+.it{padding:1px 0;line-height:1.15}
+.two .it{font-size:14px}
+.dl{margin-left:auto;font-style:normal;font-size:12px;color:var(--mu);white-space:nowrap;border-bottom:1px dashed var(--mu)}
+.dl+.rm{margin-left:4px}
+.obj{margin-bottom:18px}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const DEF=[["Se lever avant 6h","c"],["Douche froide","c"],["Pas de téléphone avant 11h","c"],["Sport","c"],["Lire 20 pages","c"],["Méditer 10 min","c"],["Manger sain","c"],["3 L d’eau","c"],["Pas d’alcool","c"],["Dormir avant 22h30","c"],["Journaling","o"],["Deep work","o"],["Apprendre quelque chose","o"],["10k pas","o"],["Étirements","o"]];
+const MOIS=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+let S;try{S=JSON.parse(localStorage.getItem("disc")||"null")}catch(e){S=null}
+if(!S)S={habits:DEF.map((h,i)=>({id:"h"+i,name:h[0],type:h[1]})),log:{},j:{}};
+Object.keys(S.log).forEach(k=>S.log[k]=S.log[k].filter(i=>/^h\d+$/.test(i)));
+if(!S.obj)S.obj=[];
+const save=()=>{try{localStorage.setItem("disc",JSON.stringify(S))}catch(e){}};
+const pad=n=>String(n).padStart(2,"0"),key=(y,m,d)=>y+"-"+pad(m+1)+"-"+pad(d);
+const now=new Date(),TK=key(now.getFullYear(),now.getMonth(),now.getDate());
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L=k=>S.log[k]||[];
+let vy=now.getFullYear(),vm=now.getMonth(),edit=false,pend=null,adding=null,eo=null,first=true;
+function tog(k,id){const a=L(k);S.log[k]=a.includes(id)?a.filter(x=>x!==id):[...a,id];save();render()}
+function stats(y,m){const dim=new Date(y,m+1,0).getDate(),last=(y===now.getFullYear()&&m===now.getMonth())?now.getDate():(new Date(y,m,1)>now?0:dim),ids=S.habits.map(h=>h.id);let c=0;for(let d=1;d<=last;d++)c+=L(key(y,m,d)).filter(i=>ids.includes(i)).length;const p=last*ids.length;return{dim,last,pct:p?Math.round(c/p*100):0}}
+function item(h){const on=L(TK).includes(h.id);return`<div class="it ${on?"on":""}" data-t="${h.id}"><i class="bx">${on?"✓":""}</i><span>${esc(h.name)}</span><b class="rm" data-d="${h.id}">${pend===h.id?"sûr ?":"✕"}</b></div>`}
+function line(v,W,H,area,grid){const n=v.length,p=4,P=v.map((y,i)=>[p+(n>1?i*(W-2*p)/(n-1):0),H-p-y*(H-2*p)/100]);const d=P.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join("");const a=area&&n>1?`<path d="${d}L${P[n-1][0].toFixed(1)} ${H-p}L${P[0][0]} ${H-p}Z" fill="var(--ink)" opacity=".08"/>`:"";const g=grid?[0,50,100].map(y=>{const yy=H-p-y*(H-2*p)/100;return`<line x1="0" x2="${W}" y1="${yy}" y2="${yy}" stroke="var(--ln)" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>`}).join(""):"";const dot=n===1?`<circle cx="${P[0][0]}" cy="${P[0][1]}" r="3" fill="var(--ink)"/>`:"";return`<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none" style="display:block">${g}${a}<path d="${d}" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>${dot}</svg>`}
+function chart(y,m){const ms=stats(y,m),N=S.habits.length;if(!ms.last||!N)return`<div class="cl" style="padding:14px;text-align:center">Pas encore de données</div>`;const ids=S.habits.map(h=>h.id),dv=[];for(let d=1;d<=ms.last;d++)dv.push(L(key(y,m,d)).filter(i=>ids.includes(i)).length/N*100);const rows=S.habits.map(h=>{let c=0;const v=[];for(let d=1;d<=ms.last;d++){if(L(key(y,m,d)).includes(h.id))c++;v.push(c/d*100)}return`<div class="cr"><em>${esc(h.name)}</em><div>${line(v,88,24,0,0)}</div><span>${Math.round(c/ms.last*100)}%</span></div>`}).join("");return`<div class="cl">% d’habitudes validées par jour</div>${line(dv,300,110,1,1)}<div class="ax"><span>1</span><span>0 · 50 · 100 %</span><span>${ms.last}</span></div><div class="cl" style="margin-top:14px">Taux cumulé par habitude</div>${rows}`}
+function jd(){const j=S.j[TK]||(S.j[TK]={w:["","",""],n:""});if(!j.g)j.g=[];return j}
+function goalsHtml(){return jd().g.map((x,i)=>`<div class="it ${x.d?"on":""}" data-g="${i}"><i class="bx">${x.d?"✓":""}</i><span>${esc(x.t)}</span><b class="rm" data-gd="${i}">${pend==="g"+i?"sûr ?":"✕"}</b></div>`).join("")}
+function objsHtml(){const t0=new Date(now.getFullYear(),now.getMonth(),now.getDate());return[...S.obj].sort((a,b)=>(a.d?0:1)-(b.d?0:1)||(a.d>b.d?1:a.d<b.d?-1:0)).map(o=>{let lab="indéterminé";if(o.d){const n=Math.round((new Date(o.d+"T00:00:00")-t0)/864e5);lab=o.d.slice(8)+"/"+o.d.slice(5,7)+" · "+(n>0?"J-"+n:n===0?"aujourd’hui":"J+"+(-n))}return`<div class="it ${o.done?"on":""}" data-ot="${o.id}"><i class="bx">${o.done?"✓":""}</i><span>${esc(o.t)}</span><em class="dl" data-oe="${o.id}">${lab}</em><b class="rm" data-od="${o.id}">${pend==="o"+o.id?"sûr ?":"✕"}</b></div>${eo===o.id?`<div class="ar"><input type="date" class="ln" id="od" value="${o.d||""}"><button data-os="${o.id}|set">OK</button><button data-os="${o.id}|none">Indéterminé</button></div>`:""}`}).join("")}
+function addbox(t){const lb={c:"habitude",o:"habitude",g:"goal",ob:"objectif"}[t];if(adding!==t)return`<span class="add" data-a="${t}">+ ${lb}</span>`;if(t==="ob")return`<div class="ar" style="flex-wrap:wrap"><input class="ln" id="nn" placeholder="Nouvel objectif" style="flex:1 1 100%"><input type="date" class="ln" id="nd" style="flex:1"><button data-a="okob">OK</button></div><div class="mu" style="font-size:12px;color:var(--mu);margin-top:3px">Date vide = indéterminé</div>`;return`<div class="ar"><input class="ln" id="nn" placeholder="${t==="g"?"Nouveau goal":"Nouvelle habitude"}"><button data-a="ok${t}">OK</button></div>`}
+function page(){const hs=S.habits,core=hs.filter(h=>h.type==="c"),oth=hs.filter(h=>h.type==="o"),ms=stats(vy,vm),j=S.j[TK]||{w:["","",""],n:""};
+let t=`<table><tr><th class="h">HABITUDES</th>`;for(let d=1;d<=ms.dim;d++)t+=`<th class="${key(vy,vm,d)===TK?"t":""}">${d}</th>`;t+="</tr>";
+hs.forEach(h=>{t+=`<tr><td class="h">${esc(h.name)}</td>`;for(let d=1;d<=ms.dim;d++){const k=key(vy,vm,d),on=L(k).includes(h.id),fut=new Date(vy,vm,d)>now;t+=`<td data-c="${k}|${h.id}" class="${on?"y":fut?"":"n"} ${k===TK?"t":""}">${on?"✓":fut?"":"×"}</td>`}t+="</tr>"});t+="</table>";
+return`<div class="top"><h1>MON SYSTÈME DE DISCIPLINE</h1><div class="rt"><button class="th" data-s="1" aria-label="Changer de style">◐</button><span>${pad(now.getDate())}/${pad(now.getMonth()+1)}</span></div></div>
+<div class="two"><div><h2>Non-négociables quotidiens</h2>${core.map(item).join("")}${addbox("c")}<div class="box" style="margin-top:10px"><h2>Goals du jour</h2>${goalsHtml()}${addbox("g")}</div></div>
+<div><div class="box"><h2>Autres habitudes</h2>${oth.map(item).join("")}${addbox("o")}</div><div class="rem">RAPPEL :</div><span class="q">Discipline aujourd’hui, liberté demain.</span></div></div>
+<div class="row2"><h2 style="margin:0">Suivi des habitudes</h2><button class="vt" data-v="1">${S.vw==="c"?"Tableau":"Courbes"}</button></div><div class="mn"><button data-m="-1">‹</button><b>${MOIS[vm]} ${vy}</b><button data-m="1">›</button></div>
+${S.vw==="c"?`<div class="ch">${chart(vy,vm)}</div>`:`<div class="tw" id="tw">${t}</div>`}
+<div class="box obj"><h2>Objectifs</h2>${objsHtml()}${addbox("ob")}</div>
+<div class="pg">Progrès global : <b>${ms.pct}%</b></div>
+<div style="margin-top:14px"><span class="q">Continue de te montrer. Ton futur toi compte sur toi.</span></div>
+
+${edit?`<div class="ad"><input class="ln" id="nn" placeholder="Nouvelle habitude"><select id="nt"><option value="c">Non-négociable</option><option value="o">Autre habitude</option></select><button id="add">Ajouter</button></div>`:""}`}
+const eff=()=>S.pt||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+function applyTheme(){const t=eff();document.documentElement.dataset.theme=t;const m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==="dark"?"#0e0e0f":"#f1ece0"}
+function render(){applyTheme();const o=document.getElementById("tw"),sl=o?o.scrollLeft:null;document.getElementById("app").innerHTML=page();const n=document.getElementById("tw");
+if(n){if(sl!==null)n.scrollLeft=sl;else if(first&&vy===now.getFullYear()&&vm===now.getMonth())n.scrollLeft=Math.max(0,(now.getDate()-6)*17);first=false}}
+document.addEventListener("click",e=>{const t=e.target.closest("[data-t],[data-c],[data-m],[data-d],[data-a],[data-s],[data-v],[data-g],[data-gd],[data-ot],[data-od],[data-oe],[data-os]");if(!t)return;
+if(t.dataset.gd!==undefined){const k="g"+t.dataset.gd;if(pend===k){jd().g.splice(+t.dataset.gd,1);pend=null;save()}else pend=k;render()}
+else if(t.dataset.g!==undefined){const g=jd().g[+t.dataset.g];if(g){g.d=!g.d;save();render()}}
+else if(t.dataset.od){const k="o"+t.dataset.od;if(pend===k){S.obj=S.obj.filter(o=>o.id!==t.dataset.od);pend=null;save()}else pend=k;render()}
+else if(t.dataset.oe){eo=eo===t.dataset.oe?null:t.dataset.oe;render()}
+else if(t.dataset.os){const[i,w]=t.dataset.os.split("|"),o=S.obj.find(o=>o.id===i);if(o){o.d=w==="set"?(document.getElementById("od").value||""):"";save()}eo=null;render()}
+else if(t.dataset.ot){const o=S.obj.find(o=>o.id===t.dataset.ot);if(o){o.done=!o.done;save();render()}}
+else if(t.dataset.v){S.vw=S.vw==="c"?"t":"c";first=true;save();render()}
+else if(t.dataset.s){S.pt=eff()==="dark"?"light":"dark";save();render()}
+else if(t.dataset.a){const a=t.dataset.a;if(!a.startsWith("ok")){adding=a;eo=null;render();const i=document.getElementById("nn");if(i)i.focus()}else{const k=a.slice(2),v=document.getElementById("nn").value.trim();if(v){if(k==="c"||k==="o")S.habits.push({id:"h"+Date.now(),name:v,type:k});else if(k==="g")jd().g.push({t:v,d:false});else if(k==="ob"){const dd=document.getElementById("nd");S.obj.push({id:"o"+Date.now(),t:v,d:dd?dd.value:"",done:false})}save()}adding=null;render()}}
+else if(t.dataset.d){if(pend===t.dataset.d){S.habits=S.habits.filter(h=>h.id!==t.dataset.d);pend=null;save()}else pend=t.dataset.d;render()}
+else if(t.dataset.e){edit=!edit;pend=null;render()}
+else if(t.dataset.m){vm+=+t.dataset.m;if(vm<0){vm=11;vy--}if(vm>11){vm=0;vy++}first=true;const w=document.getElementById("tw");if(w)w.scrollLeft=0;render()}
+else if(t.dataset.c){const[k,i]=t.dataset.c.split("|");if(new Date(k+"T00:00:00")<=now)tog(k,i)}
+else if(t.dataset.t)tog(TK,t.dataset.t);
+else if(t.id==="add"){const v=document.getElementById("nn").value.trim();if(v){S.habits.push({id:"h"+Date.now(),name:v,type:document.getElementById("nt").value});save();render()}}});
+document.addEventListener("input",e=>{if(e.target.dataset.w===undefined&&e.target.id!=="notes")return;const j=S.j[TK]||(S.j[TK]={w:["","",""],n:""});if(e.target.dataset.w!==undefined)j.w[+e.target.dataset.w]=e.target.value;else j.n=e.target.value;save()});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="nn"){const b=document.querySelector("[data-a^=ok]");if(b)b.click()}});
+render();
+</script>
+</body>
+</html>
